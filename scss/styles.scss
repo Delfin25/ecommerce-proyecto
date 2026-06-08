@@ -1,0 +1,105 @@
+@import"variables";
+
+.banner {
+  width: 100%;
+  padding: 115px 0;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 45%;
+  color: #0c0c0c;
+
+  &__title {
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  &__text {
+    margin: 0 auto;
+    font-size: 25px;
+    opacity: 0.7;
+  }
+}
+
+.header {
+  width: 100%;
+  padding: 20px 50px;
+  background-color: $primary-color;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__image--cart {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  &__image--menu {
+    width: 100px;
+  }
+
+  &__image--logo {
+    width: 400px;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.products {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__card {
+    width: $card-width;
+    text-align: center;
+  }
+
+  &__image {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  &__button {
+    @include button-style;
+    background-color: $primary-color;
+  }
+
+  &__button--secondary {
+    @extend .products__button;
+    background-color: $secondary-color;
+  }
+}
+
+$primary-color: #333;
+$secondary-color: #777;
+$text-color: #333;
+$font-main: "Lexend", sans-serif;
+$card-width: 300px;
